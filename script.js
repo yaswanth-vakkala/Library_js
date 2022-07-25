@@ -1,3 +1,8 @@
+let myLibrary = [
+  { title: "jj", author: "lfsd", npages: 123, isRead: "yes" },
+  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
+];
+
 function Book(title, author, npages, isRead) {
   this.title = title;
   this.author = author;
@@ -15,5 +20,18 @@ function Book(title, author, npages, isRead) {
   };
 }
 
-const b1 = new Book("Harry potter", "Jk Rowlings", 1200, "no");
-console.log(b1.info());
+function addBookToLibrary(title, author, npages, isRead) {
+  myLibrary.push(new Book(title, author, npages, isRead));
+}
+
+function displayBooks() {
+  const area = document.querySelector(".catalog");
+  myLibrary.forEach(function (curr) {
+    // const element = new Book(curr.title, curr.author, curr.npages, curr.isRead);
+    const child = document.createElement("div");
+    child.innerHTML = curr.title;
+    area.appendChild(child);
+  });
+}
+
+displayBooks();

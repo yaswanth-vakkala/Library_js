@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    background-color: #F1F1F1;
+}
+
+.header h1{
+   padding-top: 20px;
+   font-family: cursive, sans-serif;
+}
+
+.btn{
+    height: 80px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.btn button{
+    padding: 8px 18px;
+    cursor: pointer;
+}
