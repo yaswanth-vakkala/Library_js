@@ -56,3 +56,14 @@
 .actions button{
   cursor: pointer;
 }
+
+.popForm{
+  margin-top: 26px;
+}
+
+.inputForm{
+  display: flex;
+  justify-content: space-around;
+  width: 1000px;
+  margin: auto;
+}

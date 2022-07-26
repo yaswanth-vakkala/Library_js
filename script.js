@@ -59,6 +59,7 @@ function displayBooks() {
     child.innerHTML = `
       <div class="card" >
         <div><h3>${curr.title}</h3></div>
+        <div><p>${curr.npages}</p></div>
         <div><p>${curr.author}</p></div>
         </div>
         <div class="actions">
