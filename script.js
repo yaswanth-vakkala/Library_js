@@ -39,12 +39,37 @@ function displayBooks() {
         <div><p>${curr.author}</p></div>
         </div>
         <div class="actions">
-          <div><button>Read</button></div>
-          <div><button>Remove</button></div>
+          <div><button class="read" onClick = "handleRead()">Read</button></div>
+          <div><button class="remove" onClick = "removeBook()">Remove</button></div>
         </div>
     `;
     area.appendChild(child);
   });
+  const readList = document.querySelectorAll(".read");
+  readList.forEach(function (curr) {
+    curr.addEventListener("click", function (e) {
+      if (e.target.style.backgroundColor == "red") {
+        e.target.style.backgroundColor = "green";
+      } else {
+        e.target.style.backgroundColor = "red";
+      }
+    });
+  });
+
+  const divList = document.querySelectorAll(".remove");
+  divList.forEach(function (curr) {
+    curr.addEventListener("click", function (e) {
+      myLibrary.remove(e.target);
+    });
+  });
 }
 
 displayBooks();
+
+function removeBook() {
+  myLibrary.pop();
+  area.replaceChildren();
+  displayBooks();
+}
+
+function handleRead() {}
