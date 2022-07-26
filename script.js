@@ -60,7 +60,11 @@ function displayBooks() {
       <div class="card" >
         <div><h3>${curr.title}</h3></div>
         <div><p>${curr.author}</p></div>
-      </div>
+        </div>
+        <div class="actions">
+          <div><button>Read</button></div>
+          <div><button>Remove</button></div>
+        </div>
     `;
     area.appendChild(child);
   });
