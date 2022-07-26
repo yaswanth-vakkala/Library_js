@@ -1,34 +1,4 @@
-let myLibrary = [
-  { title: "jj", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-  { title: "tk", author: "lfsd", npages: 123, isRead: "yes" },
-];
+let myLibrary = [];
 
 function Book(title, author, npages, isRead) {
   this.title = title;
@@ -46,13 +16,19 @@ function Book(title, author, npages, isRead) {
     );
   };
 }
+const area = document.querySelector(".catalog");
 
-function addBookToLibrary(title, author, npages, isRead) {
-  myLibrary.push(new Book(title, author, npages, isRead));
+function addBookToLibrary() {
+  const Ititle = document.getElementById("title").value;
+  const Iauthor = document.getElementById("author").value;
+  const Ipages = document.getElementById("npages").value;
+  myLibrary.push(new Book(Ititle, Iauthor, Ipages, "no"));
+  area.replaceChildren();
+  displayBooks();
+  document.getElementById("bookForm").reset();
 }
 
 function displayBooks() {
-  const area = document.querySelector(".catalog");
   myLibrary.forEach(function (curr) {
     // const element = new Book(curr.title, curr.author, curr.npages, curr.isRead);
     const child = document.createElement("div");
